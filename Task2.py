@@ -25,16 +25,34 @@ Print a message:
 September 2016.".
 """
 
-caller_max = ""
-duration_max = -1
+telephones = {}
 
-for call in calls:
-    caller, duration = (call[0], int(call[3]))
-    if duration > duration_max:
-        caller_max = caller
-        duration_max = duration
 
-msg = f"{caller_max} spent the longest time, {duration_max} seconds, on the phone during September 2016."
+def increase_duration(telephone, duration, telephones=telephones):
+    """Create or update a telephone cumulative duration"""
+    if telephone in telephones.keys():
+        telephones[telephone] += duration
+    else:
+        telephones[telephone] = duration
+
+
+def iterate_calls():
+    """Accumulate duration for each telephone line on a call"""
+    for call in calls:
+
+        caller, receiving, duration = (call[0], call[1], int(call[3]))
+
+        increase_duration(caller, duration)
+        increase_duration(receiving, duration)
+
+    return sorted(telephones.items(), key=lambda x: x[1])
+
+
+# the longest time spent by a number cumulatively
+phone_number, duration = iterate_calls()[-1]
+
+
+msg = f"{phone_number} spent the longest time, {duration} seconds, on the phone during September 2016."
 print(msg)
 
 

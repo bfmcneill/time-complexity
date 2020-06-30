@@ -43,6 +43,6 @@ for text in texts:
 exclude = inbound_callers.union(outbound_texter).union(inbound_texter)
 
 print("These numbers could be telemarketers: ")
-[print(item) for item in outbound_callers.difference(exclude)]
+[print(item) for item in sorted(outbound_callers.difference(exclude))]
 
 # worst case big O(n)

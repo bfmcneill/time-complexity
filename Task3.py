@@ -48,37 +48,41 @@ The percentage should have 2 decimal digits
 
 is_mobile = lambda call: True if " " in call[1] else False
 is_fixed = lambda call: True if ")" in call[1] else False
-is_fixed_bangalore = lambda line: True if "(080)" in line else False
+is_bangalore = lambda line: True if "(080)" in line else False
 
-extract_mobile = lambda call: call[1].split(" ")[0]
-extract_fixed = lambda call: call[1].split(")")[0][1:]
+extract_mobile_prefix = lambda call: call[1].split(" ")[0][:4]
+extract_fixed_prefix = lambda call: call[1].split(")")[0][1:]
 
-result = set()
+unique_phone_prefix = set()
 mobile_count = 0
 fixed_count = 0
 bangalore_local_call_count = 0
 
 for call in calls:
 
-    if is_fixed_bangalore(call[0]):
+    if is_bangalore(call[0]):
 
         if is_mobile(call):
             mobile_count += 1
-            result.add(extract_mobile(call))
+            unique_phone_prefix.add(extract_mobile_prefix(call))
 
-        if is_fixed(call):
+        elif is_fixed(call):
             fixed_count += 1
-            if is_fixed_bangalore(call[1]):
-                bangalore_local_call_count += 1
-            result.add(extract_fixed(call))
+            unique_phone_prefix.add(extract_fixed_prefix(call))
 
-# Part A
+        if is_bangalore(call[1]):
+            bangalore_local_call_count += 1
+
+# Part A - Unique list of number prefixes called from Bangalore
 print("The numbers called by people in Bangalore have codes:")
-[print(item) for item in sorted(result)]
+[print(item) for item in sorted(unique_phone_prefix)]
 
-# Part B
+# Part B - Percent of calls that are local
+total_call_count = fixed_count + mobile_count
+bangalor_call_ratio = bangalore_local_call_count / total_call_count
+
 print(
-    f"""{bangalore_local_call_count/fixed_count * 100:.2f} percent of calls from fixed lines in Bangalore 
+    f"""{bangalor_call_ratio * 100:.2f} percent of calls from fixed lines in Bangalore 
 are calls to other fixed lines in Bangalore."""
 )
 
