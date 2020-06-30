@@ -1,8 +1,7 @@
-# Phone call and text message analysis 
+# Phone call and text message analysis
 
 - Create algorithm
 - Analyze algorithm worst case time complexity
-
 
 ## `Task0.py`
 
@@ -12,7 +11,6 @@
     - Algorithm:
       - select the list element from communication data
       - interpolate extracted values into a printed message 
-
 
 ## `Task1.py`
 
@@ -41,9 +39,7 @@
       - increment cumulative value with call duration if exists 
       - else create new record and set initial value to call duration
 
-
 ## `Task3.py`
-
 
     - Worse case complexity : O(n)
     - inputs: 2 sequential lists of communication data
@@ -66,7 +62,6 @@
       - determine the ratio of local received bangalore calls to total received calls
       - print the bangalore call ratio interpolated inside of a helpful message
 
-
 ## `Task4.py`
 
     - Worse case complexity : O(n)
@@ -79,3 +74,11 @@
       - union all inbound callers and texter sets into one set
       - subtract all union values from the outbound list and capture remaining numbers
       - print each remaining number sorted ascending
+
+
+## Resources for time complexity
+
+- [Medium :: Algorithm Time Complexity and Big O Notation](https://medium.com/@StueyGK/algorithm-time-complexity-and-big-o-notation-51502e612b4d)
+- [Khan Academy :: Big-O notation](https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation)
+- [HackerEarth :: Time and Space Complexity](https://www.hackerearth.com/practice/basic-programming/complexity-analysis/time-and-space-complexity/tutorial/)
+- [Medium :: Understanding time complexity with Python examples](https://towardsdatascience.com/understanding-time-complexity-with-python-examples-2bda6e8158a7)
