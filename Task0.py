@@ -21,7 +21,7 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
-first_text = texts[0]
+first_text = texts[0] 
 text_msg = f"First record of texts, {first_text[0]} texts {first_text[1]} at time {first_text[2]}"
 print(text_msg)
 
