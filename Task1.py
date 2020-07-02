@@ -32,6 +32,3 @@ for row in calls:
 
 msg = f"There are {len(unique_numbers)} different telephone numbers in the records."
 print(msg)
-
-# worst case big O(n)
-

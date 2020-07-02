@@ -85,5 +85,3 @@ print(
     f"""{bangalor_call_ratio * 100:.2f} percent of calls from fixed lines in Bangalore 
 are calls to other fixed lines in Bangalore."""
 )
-
-# worst case big O(n)

@@ -54,6 +54,3 @@ phone_number, duration = iterate_calls()[-1]
 
 msg = f"{phone_number} spent the longest time, {duration} seconds, on the phone during September 2016."
 print(msg)
-
-
-# worst case big O(n)

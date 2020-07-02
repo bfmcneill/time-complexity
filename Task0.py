@@ -26,7 +26,7 @@ text_msg = f"First record of texts, {first_text[0]} texts {first_text[1]} at tim
 print(text_msg)
 
 last_call = calls[-1]
-call_msg = f"First record of calls, {last_call[0]} calls {last_call[1]} at time {last_call[2]}, lasting {last_call[3]} seconds"
+call_msg = f"Last record of calls, {last_call[0]} calls {last_call[1]} at time {last_call[2]}, lasting {last_call[3]} seconds"
 print(call_msg)
 
 
