@@ -41,7 +41,7 @@
 
 ## `Task3.py`
 
-    - Worse case complexity : `O(n)`
+    - Worse case complexity : `O(n log n)`
     - inputs: 2 sequential lists of communication data
     - output A: Unique list of number prefixes called from Bangalore
     - output B: Percent of calls that are Bangalore local
@@ -57,14 +57,14 @@
       - loop over each record `O(n)`
         - determine if call was made to a mobile or fixed caller `O(1)`        
         - determine if call was a local bangalore call and increment if local `O(1)`
-      - print sorted unique number prefix list ascending `O(n)`
+      - print sorted unique number prefix list ascending `O(n log n)`
       - calculate total call recipient count (fixed and mobile) `O(1)`
       - determine the ratio of local received bangalore calls to total received calls `O(1)`
       - print the bangalore call ratio interpolated inside of a helpful message `O(1)`
 
 ## `Task4.py`
 
-    - Worse case complexity : `O(n)`
+    - Worse case complexity : `O(n log n)`
     - inputs: 2 sequential lists of communication data
     - output: determine numbers likely to be telemarketers
     - Algorithm:
@@ -75,6 +75,7 @@
         - add data to set  `O(1)`
       - union all inbound callers and texter sets into one set `O(n)`
       - subtract all union values from the outbound list and capture remaining numbers `O(n)`
+      - sort the remaining values `O(n log n)`
       - print each remaining number sorted ascending `O(n)`
 
 
@@ -86,3 +87,4 @@
 - [Medium :: Understanding time complexity with Python examples](https://towardsdatascience.com/understanding-time-complexity-with-python-examples-2bda6e8158a7)
 - [Complexity of Python Operations](https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt)
 - [Introduction to Big O Notation and Time Complexity](https://www.youtube.com/watch?v=D6xkbGLQesk)
+- [Python Wiki :: Time Complexity](https://wiki.python.org/moin/TimeComplexity)
